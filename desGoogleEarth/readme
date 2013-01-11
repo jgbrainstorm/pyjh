@@ -1,0 +1,14 @@
+To get the package installed properly, you need to use the libpng and gflags. All these packages need to be compiled and installed in the directory appended with_install. Then, you need to modifiy the .bashr file to add the library path
+
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/home/jghao/research/ggsvn/des-google-earth/wcs2kml_install/lib:/home/jghao/research/ggsvn/des-google-earth/gflags_install/lib
+
+
+Then, you need to compile the wcs2kml by:
+
+sudo ./configure --with-png-dir=/home/jghao/research/ggsvn/des-google-earth/libpng_install --with-gflags-dir=/home/jghao/research/ggsvn/des-google-earth/gflags_install --prefix=/home/jghao/research/ggsvn/des-google-earth/wcs2kml_install
+
+sudo make
+
+sudo make install
+
+J. Hao, 9/18/2012
