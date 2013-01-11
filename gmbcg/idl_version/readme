@@ -1,0 +1,39 @@
+this file tells how to run the gmbcg cluster finder. 
+Jiangang Hao
+12/14/10
+
+#------------------------------------#
+dependency: sdssidl, IDL Astronomy
+#-----------------------------------#
+
+
+0. The input catalog should be in fit file format. Exactly specified as here:
+https://sites.google.com/site/descwg/Home/des-cluster-finders/cluster-runs/mock_format.
+
+However, if you want to run on the truth table, you need to change the rungmbcg.pro file to use the one with /truth keyword. 
+
+#---------the following is the directions about how to run it--------------
+
+1. in the config file, change the input directory and output directory. Please do not add any space when you do the changes. Just replace the directory part.
+
+2. Specify a radius in the config file. This is the searching aperture, in unit of Mpc. I put 1.0 Mpc for example.
+
+3. In command line, type: idl rungmbcg
+
+4. It is done!
+
+#-------output files-------
+
+There are several output files:
+       des_mock_v1.00_BCG_blended_gmbcg_v2.5.fit
+       des_mock_v1.00_BCG_gmbcg_v2.5.fit
+       des_mock_v1.00_BCG_gmbcg_v2.5_stripe_0.fit
+       des_mock_v1.00_BCGMB_gmbcg_v2.5_stripe_0.fit
+       des_mock_v1.00_gmbcg_Hao.fit
+
+Only the des_mock_v1.00_gmbcg_Hao.fit is for the analysis pipeline. HDU1 is for the BCG list. HDU 2 is for members. HDU0 is nothing. 
+See: https://sites.google.com/site/descwg/Home/des-cluster-finders/cluster-runs/mock_format
+
+for details of the format. 
+
+-Jiangang 2/1/11
